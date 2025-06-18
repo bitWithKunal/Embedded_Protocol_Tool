@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Payment - Embedded Tool Access</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background: linear-gradient(to right, #f0f4f8, #e2ecf6);
+    }
+
+    .glow-button {
+      background: linear-gradient(to right, #22c55e, #16a34a);
+      box-shadow: 0 4px 14px rgba(34, 197, 94, 0.4);
+    }
+
+    .glow-button:hover {
+      background: linear-gradient(to right, #16a34a, #15803d);
+      box-shadow: 0 6px 20px rgba(22, 163, 74, 0.5);
+    }
+  </style>
+</head>
+<body class="flex items-center justify-center min-h-screen p-4">
+
+  <div class="bg-white shadow-2xl rounded-2xl p-8 max-w-lg w-full text-gray-800">
+    <h1 class="text-3xl font-extrabold text-center text-blue-700 mb-2">Unlock Premium Tool</h1>
+    <p class="text-center text-gray-600 mb-6 text-sm">
+      Pay <span class="font-semibold text-black">₹100</span> to access embedded protocol tools, tutorials, and updates by <strong>Kunal Saraswat</strong>.
+    </p>
+
+    <!-- Payment Options -->
+    <div class="mb-6 space-y-6">
+      <div class="p-4 bg-blue-50 rounded-md border border-blue-200">
+        <p class="font-semibold text-blue-700 mb-1">🔹 Razorpay</p>
+        <a href="https://rzp.io/rzp/sohBcLJv" target="_blank" class="text-blue-600 underline hover:text-blue-800">
+          Click here to pay ₹100 via Razorpay
+        </a>
+      </div>
+
+      <div class="p-4 bg-green-50 rounded-md border border-green-200">
+        <p class="font-semibold text-green-700 mb-1">🔹 UPI (Any App)</p>
+        <a href="upi://pay?pa=erkunal.saraswat-2@okhdfcbank&pn=Kunal%20Saraswat&am=100&cu=INR"
+           class="text-green-600 underline hover:text-green-800">
+          Pay ₹100 via UPI (click here)
+        </a>
+        <p class="text-xs text-gray-500 mt-2">or scan this QR code:</p>
+        <div class="mt-3 flex justify-center">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?data=upi://pay?pa=erkunal.saraswat-2@okhdfcbank&pn=Kunal%20Saraswat&am=100&cu=INR&size=200x200"
+               alt="UPI QR ₹100"
+               class="w-36 h-36 border rounded shadow-md" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Verification Button -->
+    <div class="text-center mb-6">
+      <button onclick="redirectToGoogleForm()" class="glow-button text-white font-semibold py-3 px-6 rounded-lg text-lg transition">
+        ✅ I've Paid – Submit for Verification
+      </button>
+    </div>
+
+    <p class="text-sm text-gray-600 mt-4">
+      Please email your transaction ID or UPI screenshot to:
+      <a href="mailto:kunalsaraswat30@gmail.com" class="text-blue-600 underline">kunalsaraswat30@gmail.com</a>
+    </p>
+  </div>
+
+  <script>
+    function redirectToGoogleForm() {
+      window.location.href = "https://docs.google.com/forms/d/1H-_EL3VFGdCMbIzOe5l8KZTjLJnk9Ezd2hJSq_c3ISA/viewform";
+    }
+  </script>
+
+</body>
+</html>
