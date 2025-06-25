@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -372,6 +373,10 @@
         <p class="text-gray-600 dark:text-gray-300 mb-4">This section is available only to premium users. Unlock all protocols and exclusive content now.</p>
         <a href="payment.html" class="inline-block bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">Buy Premium</a>
     </div>
+</div>
+                    <div class="view-counter flex items-center text-sm text-gray-500 dark:text-gray-400 ml-4">
+    <i class="fas fa-eye mr-1"></i>
+    <span id="viewCount">0</span> views
 </div>
 
                     <a href="payment.html" target="_blank" class="flex items-center text-white bg-green-600 hover:bg-green-700 px-3 py-1 rounded-md shadow">
@@ -2235,7 +2240,14 @@ function sendFeedbackEmail() {
             }
         }
     });
-
+// View counter - simple version (client-side only)
+document.addEventListener('DOMContentLoaded', () => {
+    const viewCountElement = document.getElementById('viewCount');
+    let views = localStorage.getItem('pageViews') || 0;
+    views = parseInt(views) + 1;
+    localStorage.setItem('pageViews', views);
+    viewCountElement.textContent = views.toLocaleString();
+});
 
         if (!sessionStorage.getItem("paidUser")) {
   setTimeout(() => {
